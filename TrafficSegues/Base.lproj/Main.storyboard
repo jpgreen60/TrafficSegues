@@ -43,6 +43,9 @@
                     <navigationItem key="navigationItem" title="Red" id="Koc-h0-5Jb">
                         <barButtonItem key="backBarButtonItem" title="Go To Red" id="QhY-lE-VwM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="JQT-5J-bVo" id="A4m-lR-w6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
