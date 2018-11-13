@@ -17,12 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X1B-bI-n9n">
+                                <rect key="frame" x="163" y="357" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-iz-8s7">
+                                <rect key="frame" x="44" y="283" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Push to Yellow">
+                                    <color key="titleColor" red="0.40495311379999999" green="0.80144744310000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="yellowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ZP-Ga-wNW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FL-49-gW6">
+                                <rect key="frame" x="237" y="283" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Push to Green">
+                                    <color key="titleColor" red="0.40495311379999999" green="0.80144744310000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="greenButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFn-8W-nl8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Red" id="Koc-h0-5Jb">
                         <barButtonItem key="backBarButtonItem" title="Go To Red" id="QhY-lE-VwM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segueSwitch" destination="X1B-bI-n9n" id="egc-Bl-fig"/>
+                        <segue destination="Mzh-Oc-2Xk" kind="show" identifier="Yellow" id="S4V-vv-t2g"/>
+                        <segue destination="96F-xn-ReE" kind="show" identifier="Green" id="OlJ-pj-Xtw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,9 +69,7 @@
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="t6B-Z9-lFB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Yellow" largeTitleDisplayMode="never" id="OZc-eO-k0v">
-                        <barButtonItem key="backBarButtonItem" title="Go To Yellow" id="FCi-fp-pTJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Yellow" largeTitleDisplayMode="never" id="OZc-eO-k0v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AG-6U-WeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,16 +85,9 @@
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="ESl-0h-VCY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Green" largeTitleDisplayMode="never" id="nqf-GA-cKo">
-                        <barButtonItem key="rightBarButtonItem" title="Pop" id="6Mv-uT-VQg">
-                            <connections>
-                                <segue destination="1uN-eK-3Xb" kind="unwind" unwindAction="unwindToRedWithUnwindSegue:" id="50E-6c-zfw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Green" largeTitleDisplayMode="never" id="nqf-GA-cKo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SW-jv-5Eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1uN-eK-3Xb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1847" y="478"/>
         </scene>
